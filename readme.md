@@ -63,10 +63,13 @@ Last, you can call nginx from your gulp tasks.  This library exposes three funct
     stopNginx(configFile)
     runNginx(configFile, {additionalArgs, fullPath})
 
-configFile is always required.  startNginx and stopNginx do what you would expect.  Nginx lets you
-administer multiple aspects of its execution by running nginx with different arguments.  For
-example, stopNginx runs nginx with the additionArguments of -s and stop.  Executing the following
-commnand will show you many of the options.
+startNginx and stopNginx do what you would expect.  configFile is always required.  All three of the
+functions always return a promise the will be resolved once the nginx process has finished execution, 
+which usually happens very quickly.
+
+Nginx lets you administer multiple aspects of its execution by running nginx with different
+arguments.  For example, stopNginx runs nginx with the additionArguments of -s and stop.  Executing
+the following commnand will show you many of the options.
 
     nginx -h
 

@@ -8,6 +8,7 @@ function runNginx(configFile, {additionalArgs, fullPath}={}) {
 
   const pwd = fullPath?fullPath:process.env.PWD
   const path = fullPath?fullPath:'nginx'
+
   const args = ['-p', pwd, '-c', configFile].concat(additionalArgs?additionalArgs:[])
 
   //console.log(`path: ${path}, args: ${args}`)
