@@ -1,0 +1,9 @@
+{
+  "name": "gulp-nginx",
+  "version": "1.0.0",
+  "description": "Gulp plugin to run nginx in the user space",
+  "main": "index.js",
+  "repository": "https://github.com/ze6ke/gulp-nginx",
+  "author": "zeke wander",
+  "license": "MIT"
+}
