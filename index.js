@@ -17,8 +17,10 @@ function runNginx(configFile, {additionalArgs, fullPath}={}) {
   nginx.stdout.on('data', (data) => console.log(`${data}`))
   nginx.stderr.on('data', (data) => console.error(`${data}`))
 
-  return new Promise((resolve) => {
-    nginx.on('close', resolve)
+  return new Promise((resolve, reject) => {
+    nginx.on('close', (code) => {
+      return code === 0 ? resolve() : reject(code);
+    })
   })
 }
 
